@@ -20,14 +20,11 @@ const productCartReducer = (productsInCart,action) => {
       { let isInclude = productsInCart.filter(product => product.id === action.id).length > 0 ? true : false;
 
         if (isInclude) {
-          return productsInCart.map(product => {
-            if (product.id === action.id) {
-              product.sum++;
-              return product;
-            } else {
-              return product;
-            }
-          })
+          return productsInCart.map(product => ({
+              ...product,
+              sum: product.id === action.id ? product.sum + 1 : product.sum
+            })
+          )
         } else {
           return [...productsInCart,{
             id: action.id,
@@ -43,15 +40,11 @@ const productCartReducer = (productsInCart,action) => {
       return [];
 
     case 'change':
-      return productsInCart.map(product => {
-        if (product.id === action.id) {
-          product.sum = action.sum;
-          return product;
-        } else {
-          return product;
-        }
-      })
-
+      return productsInCart.map(product => ({
+          ...product,
+          sum: product.id === action.id ? product.sum = action.sum : product.sum
+        })
+      )
     default:{
       throw Error('Unknown action: ' + action.type);
     }
