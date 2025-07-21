@@ -16,7 +16,7 @@ const ProductElementCart = ({product, onChange, onDelete}) => {
           onChange(product.id,productSum - 1);
         }
         }} />
-      <input type="text" className={`${styles.product_counter}`} value={productSum} onChange={e => {
+      <input type="number" className={`${styles.product_counter}`} value={productSum} onChange={e => {
           if (e.target.value > 1) {
             setProductSum(+e.target.value);
             onChange(product.id,+e.target.value);

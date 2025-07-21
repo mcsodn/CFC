@@ -27,6 +27,12 @@ input.product_counter {
     text-align: center;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
 input.delete_all {
     width: 200px;
     text-align: center;
