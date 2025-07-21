@@ -1,10 +1,11 @@
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 import styles from './ShoppingCart.module.css';
 
 // Карточка продукта в списке корзины
 const ProductElementCart = ({product, onChange, onDelete}) => {
   
   const [productSum, setProductSum] = useState(product.sum);
+  useEffect(() => {setProductSum(product.sum)},[product]);
 
   return <div className={`${styles.shopping_cart__product}`}>
     <div>{product.name}</div>
