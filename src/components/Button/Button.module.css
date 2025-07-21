@@ -1,0 +1,9 @@
+.box {
+  width: 120px;
+  height: 35px;
+  margin: 10px;
+}
+
+.red {
+  background-color: red;
+}

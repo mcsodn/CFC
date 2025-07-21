@@ -1,0 +1,45 @@
+.product_list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: left;
+    gap: 30px;
+
+    margin-bottom: 3em;
+    text-align: left;
+}
+
+.product_list h3,p {
+    margin: .05em 0;
+}
+
+h1, h2, a {
+    margin: .05em 0;
+    text-align: left;
+}
+
+input {
+    margin-top: 1.3em;
+}
+
+input.product_counter {
+    width: 30px;
+    text-align: center;
+}
+
+.shopping_cart__product {
+    width: 240px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: baseline;
+    gap: 20px;
+}
+
+.shopping_cart__product_list {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: left;
+}

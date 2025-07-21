@@ -1,0 +1,27 @@
+.notification {
+  display: block;
+  min-width: 120px;
+  max-width: 640px;
+  margin: 5px auto;
+  padding: .25rem 1rem;
+  
+
+  border-radius: 0.25rem;
+  color: #333333;
+}
+
+.notification__default {
+  background-color: beige;
+}
+
+.notification__warning {
+  background-color: rgb(255, 253, 157);
+}
+
+.notification__success {
+  background-color: rgb(105, 255, 113);
+}
+
+.notification__error {
+  background-color: rgb(255, 128, 128);
+}
