@@ -1,6 +1,7 @@
 import { useReducer } from 'react';
 import ProductList from './ProductList';
 import ProductListCart from './ProductListCart';
+import styles from './ShoppingCart.module.css';
 
 
 const products = [
@@ -92,7 +93,7 @@ const ShoppingCart = () => {
   return <>
     <ProductList products={products} onAddProduct={addToCart} /> 
     <h2>Корзина</h2>
-    <input type="button" value="Очистить корзину" onClick={()=>{deleteAllFromCart()}} />
+    <input type="button" value="Очистить корзину" className={`${styles.delete_all}`} onClick={()=>{deleteAllFromCart()}} />
     <ProductListCart products={productsInCart} onDelete={deleteFromCart} onChange={changeSumCart} />
   </>
 }

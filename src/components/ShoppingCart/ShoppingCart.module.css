@@ -27,6 +27,11 @@ input.product_counter {
     text-align: center;
 }
 
+input.delete_all {
+    width: 200px;
+    text-align: center;
+}
+
 .shopping_cart__product {
     width: 240px;
     display: flex;
