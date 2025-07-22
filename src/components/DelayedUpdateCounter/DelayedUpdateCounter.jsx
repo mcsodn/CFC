@@ -1,17 +1,39 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 const DelayedUpdateCounter = () => {
-  // Инициализация состояния с начальным значением 0
   const [count, setCount] = useState(0);
+  const [timeoutId, setTimeoutId] = useState(null);
+  const pendingCount = useRef(0);
+
+  useEffect(() => {
+    return () => {
+      if (timeoutId) {
+        clearTimeout(timeoutId);
+      }
+    };
+  }, [timeoutId]);
+
+  const updateCounter = () => {
+    clearTimeout(timeoutId);
+    pendingCount.current = count + 1;
+    
+    const tId = setTimeout(() => {
+      if (pendingCount.current !== count) {
+        setCount(pendingCount.current);
+      }
+    }, 2000);
+    
+    setTimeoutId(tId);
+  };
 
   return (
     <div>
-      <p>Вы нажали {Math.floor(count / 2)} раз</p>
-      <button onClick={() => setCount(count + 1)}>
+      <p>Вы нажали {count} раз</p>
+      <button onClick={updateCounter}>
         Нажми меня
       </button>
     </div>
   );
-}
+};
 
 export default DelayedUpdateCounter;
