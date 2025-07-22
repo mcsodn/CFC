@@ -1,8 +1,8 @@
 import './App.css'; // Импорт файла стилей
-import PauseableTimer from "./components/PauseableTimer/PauseableTimer";
+import SortableList from "./components/SortableList/SortableList";
 
 function App() {
-  return <PauseableTimer /> ;
+  return <SortableList /> ;
 }
 
 export default App;
