@@ -1,8 +1,8 @@
 import './App.css'; // Импорт файла стилей
-import DelayedUpdateCounter from "./components/DelayedUpdateCounter/DelayedUpdateCounter";
+import AutoCountdown from "./components/AutoCountdown/AutoCountdown";
 
 function App() {
-  return <DelayedUpdateCounter /> ;
+  return <AutoCountdown /> ;
 }
 
 export default App;
