@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import styles from './PauseableTimer.module.css';
+import './PauseableTimer.module.css';
 
 const PauseableTimer = () => {
   const initSeconds = 0;
