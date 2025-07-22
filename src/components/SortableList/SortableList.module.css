@@ -1,0 +1,21 @@
+.listItem {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 15px;
+}
+
+.listItem__userId {
+    min-width: 25px;
+}
+
+.listItem__userName {
+    min-width: 200px;
+}
+
+.listItem__userNickname {
+    min-width: 200px;
+}
+
+.listItem__userEmail {
+    min-width: 200px;
+}
