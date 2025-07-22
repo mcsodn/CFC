@@ -1,8 +1,8 @@
 import './App.css'; // Импорт файла стилей
-import SortableList from "./components/SortableList/SortableList";
+import DelayedUpdateCounter from "./components/DelayedUpdateCounter/DelayedUpdateCounter";
 
 function App() {
-  return <SortableList /> ;
+  return <DelayedUpdateCounter /> ;
 }
 
 export default App;
