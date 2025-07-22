@@ -1,8 +1,11 @@
 import { useState, useEffect } from 'react';
+import SortableListItem from './SortableListItem';
 
 const SortableList = () => {
-  const [data, setData] = useState(null);
+  
+  const [data, setData] = useState([]);
   const [isLoading, setLoading] = useState(true);
+
 
   useEffect(() => {
     fetch('https://jsonplaceholder.typicode.com/users/')
@@ -11,7 +14,8 @@ const SortableList = () => {
         setData(data);
         setLoading(false);
       })
-      .catch(error => console.error(error))
+      .catch(error => console.error(error));
+    
   }, []);
 
 
@@ -21,9 +25,16 @@ const SortableList = () => {
         <p>Загрузка...</p>
       </div>
     ) : (
-      <div>
-        {JSON.stringify(data)}
-      </div>
+        <>
+            <input type="button" value="Сортировать по алфавиту" 
+                onClick={()=>{
+                    setData([...data.sort((a,b) => a.name.localeCompare(b.name))]);
+                }}
+            />
+            <div>
+                {data.map(user => <SortableListItem userData={user} key={user.id} />)}
+            </div>
+        </>
     )
   );
 }
