@@ -14,16 +14,19 @@ const DelayedUpdateCounter = () => {
   }, [timeoutId]);
 
   const updateCounter = () => {
-    clearTimeout(timeoutId);
     pendingCount.current = count + 1;
     
-    const tId = setTimeout(() => {
+    if (timeoutId) {
+        clearTimeout(timeoutId);
+    }
+    
+    const newTimeoutId = setTimeout(() => {
       if (pendingCount.current !== count) {
         setCount(pendingCount.current);
       }
     }, 2000);
     
-    setTimeoutId(tId);
+    setTimeoutId(newTimeoutId);
   };
 
   return (
