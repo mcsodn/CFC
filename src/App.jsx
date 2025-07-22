@@ -1,8 +1,8 @@
 import './App.css'; // Импорт файла стилей
-import ShoppingCart from "./components/ShoppingCart/ShoppingCart";
+import PauseableTimer from "./components/PauseableTimer/PauseableTimer";
 
 function App() {
-  return <ShoppingCart /> ;
+  return <PauseableTimer /> ;
 }
 
 export default App;
