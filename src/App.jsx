@@ -1,8 +1,8 @@
 import './App.css'; // Импорт файла стилей
-import ActionHistory from "./components/ActionHistory/ActionHistory";
+import FocusInput from "./components/FocusInput/FocusInput";
 
 function App() {
-  return <ActionHistory /> ;
+  return <FocusInput /> ;
 }
 
 export default App;
