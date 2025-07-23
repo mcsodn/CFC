@@ -1,10 +1,11 @@
 import { useRef } from 'react';
 
 const FocusInput = () => {
+    const inputRef = useRef(null);
 
-  return <>
-      <h1>{seconds}</h1>
-      <input type="button" value={isStopped ? "Продолжить" : "Остановить"} onClick={()=>{setIsStopped(!isStopped)}} />
+    return <>
+        <textarea name="text_input" id="" ref={inputRef} style={{marginBottom: '15px'}}></textarea>
+        <input type="button" value="Установить фокус" onClick={() => {inputRef.current.focus()}} />
     </>
 }
 
