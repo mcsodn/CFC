@@ -1,8 +1,8 @@
 import './App.css'; // Импорт файла стилей
-import AutoCountdown from "./components/AutoCountdown/AutoCountdown";
+import ActionHistory from "./components/ActionHistory/ActionHistory";
 
 function App() {
-  return <AutoCountdown /> ;
+  return <ActionHistory /> ;
 }
 
 export default App;
